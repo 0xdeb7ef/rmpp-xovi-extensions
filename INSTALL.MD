@@ -5,6 +5,7 @@ I am NOT responsible for any damages that you may incur to your device using my 
 You are installing this at your own risk.
 
 XOVI is a tethered extension manager - after a restart, the tablet will get back to the stock OS. To get XOVI back, simply run `xovi/start` from the SSH prompt. Your tablet will restart, and you will get XOVI back.
+There is additionally now a permanent way to install xovi, if this is preferred by the user. Scroll down to find the instructions.
 
 ## To install XOVI:
 - Download [this](https://github.com/asivery/xovi/releases/latest/download/xovi.so) file
@@ -22,7 +23,7 @@ XOVI is a tethered extension manager - after a restart, the tablet will get back
        \->xovi.so (copy the file here)
 ```
 
-# Temporary Setup
+## Temporary Setup
 This will setup the xovi loader in a temporary fashion. After a reboot or shutdown & poweron xovi will not get loaded.
 
 **This setup means you as the user have to start xovi manually per SSH.**
@@ -56,7 +57,7 @@ After that, you should start seeing logs scroll up your screen. Enter your passc
 scroll up your screen on the PC, press CTRL+C.
 After that, start xovi normally (`xovi/start`)
 
-# Permanent Setup
+## Permanent Setup
 This will setup the xovi loader in a permanent way. xovi will get automatically loaded on poweron or reboot of the remarkable.
 
 ** This will cleanup the temporary setup for not needed parts.**
