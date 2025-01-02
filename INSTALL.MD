@@ -9,7 +9,7 @@ There is additionally now a permanent way to install xovi, if this is preferred 
 
 ## To install XOVI:
 - Download [this](https://github.com/asivery/xovi/releases/latest/download/xovi.so) file
-- You need the `screen` binary on your device
+- You need the `screen` binary on your device  (if using the temporary setup with the start/_start scripts)
 - Over SSH, create the following directory structure:
 ```
 /home/root
@@ -31,7 +31,7 @@ This will setup the xovi loader in a temporary fashion. After a reboot or shutdo
 ```
 echo "#!/bin/bash" > /home/root/xovi/_start
 echo "#!/bin/bash" > /home/root/xovi/start
-echo "systemctl stop xochitl; killall xochitl 2>/dev/null; bash -c '/home/root/xovi/_start'" >> /home/root/xovi/start
+echo "systemctl stop xochitl; killall xochitl 2>/dev/null; screen -dm bash -c '/home/root/xovi/_start'" >> /home/root/xovi/start
 echo "QML_DISABLE_DISK_CACHE=1 LD_PRELOAD=/home/root/xovi/xovi.so xochitl" >> /home/root/xovi/_start
 chmod a+x /home/root/xovi/{_start,start}
 ```
@@ -97,7 +97,7 @@ For more troubleshooting you can create the two scripts from the temporary setup
 ```
 echo "#!/bin/bash" > /home/root/xovi/_start
 echo "#!/bin/bash" > /home/root/xovi/start
-echo "systemctl stop xochitl; killall xochitl 2>/dev/null; bash -c '/home/root/xovi/_start' &" >> /home/root/xovi/start
+echo "systemctl stop xochitl; killall xochitl 2>/dev/null; screen -dm bash -c '/home/root/xovi/_start' &" >> /home/root/xovi/start
 echo "QML_DISABLE_DISK_CACHE=1 LD_PRELOAD=/home/root/xovi/xovi.so xochitl" >> /home/root/xovi/_start
 chmod a+x /home/root/xovi/{_start,start}
 ```
