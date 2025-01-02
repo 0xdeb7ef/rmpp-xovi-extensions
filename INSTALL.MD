@@ -30,7 +30,7 @@ This will setup the xovi loader in a temporary fashion. After a reboot or shutdo
 ```
 echo "#!/bin/bash" > /home/root/xovi/_start
 echo "#!/bin/bash" > /home/root/xovi/start
-echo "systemctl stop xochitl; killall xochitl 2>/dev/null; bash -c '/home/root/xovi/_start' &" >> /home/root/xovi/start
+echo "systemctl stop xochitl; killall xochitl 2>/dev/null; bash -c '/home/root/xovi/_start'" >> /home/root/xovi/start
 echo "QML_DISABLE_DISK_CACHE=1 LD_PRELOAD=/home/root/xovi/xovi.so xochitl" >> /home/root/xovi/_start
 chmod a+x /home/root/xovi/{_start,start}
 ```
